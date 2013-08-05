@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Domino Park - @ViewBag.Title</title>
+        @Scripts.Render("http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js")
+        @Styles.Render("~/Content/style.css")
+         
+        <script type="text/javascript">
+             $(document).ready(function () {
+                 $(".username").focus(function () {
+                     $(".user-icon").css("left", "-48px");
+                 });
+                 $(".username").blur(function () {
+                     $(".user-icon").css("left", "0px");
+                 });
+
+                 $(".password").focus(function () {
+                     $(".pass-icon").css("left", "-48px");
+                 });
+                 $(".password").blur(function () {
+                     $(".pass-icon").css("left", "0px");
+                 });
+             });
+      </script>
+    </head>
+    <body>  
+        <p class="site-title">
+           @Html.ActionLink("Domino Park","Index","Lobby")            
+        </p> 
+        <span class="sub-title">The portal for the next generation of domino players!</span>    
+        <!--WRAPPER-->
+        <div id="wrapper">
+            <!--SLIDE-IN ICONS-->
+            <div class="user-icon"></div>
+            <div class="pass-icon"></div>
+            <!--END SLIDE-IN ICONS-->
+
+            @RenderBody()
+            <!--GRADIENT--><div class="gradient"></div><!--END GRADIENT-->
+<br />
+<br />
+             <footer>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p>&copy; @DateTime.Now.Year - Domino Park</p>
+                    </div>
+                </div>
+            </footer>      
+        </div>  
+        
+    </body>
+</html>

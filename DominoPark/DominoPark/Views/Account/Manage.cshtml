@@ -1,0 +1,22 @@
+﻿@model DominoPark.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage Account";
+     Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+@if (ViewBag.HasLocalPassword)
+{
+    @Html.Partial("_ChangePasswordPartial")
+}
+else
+{ 
+    @Html.Partial("_SetPasswordPartial")
+}
+
+
